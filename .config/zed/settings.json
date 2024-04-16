@@ -7,25 +7,63 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "vim_mode": false,
-    "ui_font_size": 16,
-    "buffer_font_size": 16,
-    "tab_size": 4,
-    "lsp": {
-        "typescript-language-server": {
-            "initialization_options": {
-                "preferences": {
-                    "includeInlayParameterNameHints": "all",
-                    "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
-                    "includeInlayFunctionParameterTypeHints": true,
-                    "includeInlayVariableTypeHints": true,
-                    "includeInlayVariableTypeHintsWhenTypeMatchesName": false,
-                    "includeInlayPropertyDeclarationTypeHints": true,
-                    "includeInlayFunctionLikeReturnTypeHints": true,
-                    "includeInlayEnumMemberValueHints": true,
-                    "includeInlayEnumMemberDeclarationTypes": true
-                }
-            }
-        }
-    }
+  "vim_mode": false,
+  "theme": "Rosé Pine",
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "git": {
+    "git_gutter": "tracked_files"
+  },
+  "file_types": {
+    "CSS": ["scss"]
+  },
+  "format_on_save": "off"
+  // "languages": {
+  //   "TypeScript": {
+  //     "code_actions_on_format": {
+  //       "source.organizeImports": true
+  //     }
+  //   },
+  //   "TSX": {
+  //     "code_actions_on_format": {
+  //       "source.organizeImports": true
+  //     }
+  //   },
+  //   "Javascript": {
+  //     "code_actions_on_format": {
+  //       "source.organizeImports": true
+  //     }
+  //   },
+  //   "Vue.js": {
+  //     "code_actions_on_format": {
+  //       "source.fixAll.eslint": true
+  //     }
+  //   }
+  // },
+  // "lsp": {
+  //   "eslint": {
+  //     "settings": {
+  //       "CodeActionOnSave": {
+  //         "rules": ["import/order"]
+  //       }
+  //     }
+  //   }
+  // }
+  // "language_overrides": {
+  //   "JavaScript": {
+  //     "format_on_save": {
+  //       "external": {
+  //         "command": "prettier",
+  //         "arguments": ["--stdin-filepath", "{buffer_path}"]
+  //       }
+  //     }
+  //   }
+  // },
+  // "languages": {
+  //   "JavaScript": {
+  //     "code_actions_on_format": {
+  //       "source.fixAll.eslint": true
+  //     }
+  //   }
+  // }
 }
