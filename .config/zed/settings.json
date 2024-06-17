@@ -11,6 +11,7 @@
   "theme": "Rosé Pine",
   "ui_font_size": 16,
   "buffer_font_size": 16,
+  "tab_size": 4,
   "git": {
     "git_gutter": "tracked_files"
   },
