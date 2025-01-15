@@ -8,13 +8,24 @@
 // from the command palette or from `Zed` application menu.
 {
     "vim_mode": true,
-    "theme": "Rosé Pine",
+    "theme": "Gruvbox Dark Hard",
     "ui_font_size": 16,
     "buffer_font_size": 16,
     "tab_size": 4,
     "git": {
         "git_gutter": "tracked_files"
     },
+    "file_scan_exclusions": [
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.classpath",
+        "**/.settings",
+        "**/.yarn"
+    ],
     "file_types": {
         "CSS": ["scss"],
         "HTML": ["njk"]
@@ -140,5 +151,9 @@
                 "show_semantic_tokens_decorations_sticky_stickiness": 1
             }
         }
+    },
+    "scrollbar": {
+        "git_diff": false,
+        // "show": "never"
     }
 }
