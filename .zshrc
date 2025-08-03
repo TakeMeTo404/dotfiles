@@ -1,6 +1,14 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search zsh-fzf-history-search zsh-bat you-should-use node-bin)
+plugins=(
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	web-search
+	zsh-fzf-history-search
+	# zsh-bat # bat becomes cat, rcat becomes cat
+	node-bin
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -13,16 +21,35 @@ alias lla="ll -A"
 alias g="git"
 alias sp="speedtest"
 alias glog="git log --pretty=oneline --all --decorate --graph"
-alias sury="sudo openresty"
+alias y="yazi"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 export EDITOR=nvim
 
+# TODO: remove if unused
+function file-to-clipboard() {
+  for file in "$@"; do
+    [[ ! -e "$file" ]] && echo "File not found: $file" >&2 && return 1
+    osascript -e 'on run argv' \
+              -e 'set the clipboard to POSIX file (first item of argv)' \
+              -e 'end run' \
+              "$file"
+  done
+}
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 #if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/.config/ohmyposh/zen.toml)"
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 #fi
 
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"

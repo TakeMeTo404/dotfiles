@@ -3,7 +3,7 @@ version = 3
 final_space = true
 
 [secondary_prompt]
-  template = '❯❯ '
+  template = '  '
   foreground = 'magenta'
   background = 'transparent'
 
@@ -40,21 +40,6 @@ final_space = true
       cache_duration = 'none'
       commit_icon = '@'
       fetch_status = true
-
-[[blocks]]
-  type = 'rprompt'
-  overflow = 'hidden'
-
-  [[blocks.segments]]
-    template = '{{ .FormattedMs }}'
-    foreground = 'yellow'
-    background = 'transparent'
-    type = 'executiontime'
-    style = 'plain'
-
-    [blocks.segments.properties]
-      cache_duration = 'none'
-      threshold = 5000
 
 [[blocks]]
   type = 'prompt'
