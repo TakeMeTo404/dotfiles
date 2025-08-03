@@ -1,4 +1,7 @@
 # yazi
+installation (https://yazi-rs.github.io/docs/installation/#homebrew):
+brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick
+
 Plugin management:
 1) Install plugins via 'ya pkg add yazi-rs/plugins:no-status' command
 2) use plugins in yazi/init.lua file like 'require("no-status"):setup()' 
