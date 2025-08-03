@@ -1,0 +1,184 @@
+{
+    "vim_mode": true,
+    "relative_line_numbers": true,
+    "theme": "Gruvbox Dark",
+    "ui_font_size": 16,
+    "buffer_font_size": 16,
+    "tab_size": 4,
+    "git": {
+        "git_gutter": "tracked_files"
+    },
+    "file_scan_exclusions": [
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.classpath",
+        "**/.settings",
+        "**/.yarn"
+    ],
+    "file_types": {
+        "CSS": ["scss"]
+    },
+    "format_on_save": "off",
+    "languages": {
+        "C++": {
+            "enable_language_server": true,
+            "use_autoclose": true,
+            "extend_comment_on_newline": true,
+            "remove_trailing_whitespace_on_save": true,
+            "tab_size": 4,
+            "indent_size": 4,
+            "indent_style": "space",
+            "code_actions_on_format": {
+                "clangd": true
+            },
+            "always_treat_brackets_as_autoclosed": true,
+            "ensure_final_newline_on_save": true,
+            "show_copilot_suggestions": true
+        },
+        "TypeScript": {
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "TSX": {
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        },
+        "JavaScript": {
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
+        }
+    },
+    "lsp": {
+        "clangd": {
+            "enabled": true,
+            "version": "12.0.0",
+            "url": "https://clangd.zedapp.org",
+            "update": true,
+            "auto_update": true,
+            "auto_update_interval": 86400,
+            "auto_update_check": true,
+            "auto_update_check_interval": 86400,
+            "auto_update_check_last": 0,
+            "initialization_options": {
+                "clangd": {
+                    "completion": {
+                        "detailedLabel": true
+                    },
+                    "diagnostics": {
+                        "onOpen": true,
+                        "onSave": true
+                    },
+                    "highlight": {
+                        "lsRanges": true
+                    },
+                    "hover": {
+                        "contentFormat": ["markdown", "plaintext"]
+                    },
+                    "semanticHighlighting": true,
+                    "workspaceSymbol": {
+                        "sort": true
+                    },
+                    "codeLens": {
+                        "localVariables": true
+                    },
+                    "foldingRange": {
+                        "rangeLimit": 5000
+                    },
+                    "selectionRange": true,
+                    "semanticTokens": {
+                        "enabled": true,
+                        "legend": {
+                            "tokenTypes": [
+                                "namespace",
+                                "type",
+                                "class",
+                                "enum",
+                                "interface",
+                                "struct",
+                                "typeParameter",
+                                "parameter",
+                                "variable",
+                                "property",
+                                "enumMember",
+                                "event",
+                                "function",
+                                "method",
+                                "macro",
+                                "keyword",
+                                "modifier",
+                                "comment",
+                                "string",
+                                "number",
+                                "regexp",
+                                "operator"
+                            ],
+                            "tokenModifiers": [
+                                "declaration",
+                                "definition",
+                                "readonly",
+                                "static",
+                                "deprecated",
+                                "abstract",
+                                "async",
+                                "modification",
+                                "documentation",
+                                "defaultLibrary"
+                            ]
+                        }
+                    }
+                },
+                "show_diagnostics": true,
+                "show_hover": true,
+                "show_references": true,
+                "show_definition": true,
+                "show_document_symbols": true,
+                "show_workspace_symbols": true,
+                "show_code_actions": true,
+                "show_code_lens": true,
+                "show_formatting": true,
+                "show_rename": true,
+                "show_signature_help": true,
+                "show_type_hierarchy": true,
+                "show_semantic_tokens": true,
+                "show_semantic_highlighting": true,
+                "show_semantic_tokens_legend": true,
+                "show_semantic_tokens_legend_hover": true,
+                "show_semantic_tokens_hover": true,
+                "show_semantic_tokens_decorations": true,
+                "show_semantic_tokens_decorations_hover": true,
+                "show_semantic_tokens_decorations_sticky": true,
+                "show_semantic_tokens_decorations_sticky_hover": true,
+                "show_semantic_tokens_decorations_sticky_stickiness": 1
+            }
+        }
+    },
+    "scrollbar": {
+        "git_diff": false
+        // "show": "never"
+    }
+}
