@@ -1,14 +1,5 @@
-.config/tmux/*
-!.config/tmux/tmux.conf
-
-.config/zed/*
-!.config/zed/settings.json
-!.config/zed/keymap.json
-!.config/zed/snippets/javascript.json
-
-.config/raycast/*
-
-.config/karabiner/*
-!.config/karabiner/karabiner.json
+zed/.config/zed/prompts/*
+zed/.config/zed/conversations/*
+zed/.config/zed/themes/*
 
 **/.DS_Store
