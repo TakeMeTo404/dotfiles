@@ -1,0 +1,36 @@
+[[mgr.prepend_keymap]]
+on   = "!"
+for  = "unix"
+run  = 'shell "$SHELL" --block'
+desc = "Open $SHELL here"
+
+[[mgr.prepend_keymap]]
+on = "z"
+run = "plugin zoxide"
+desc = "Jump to a directory via zoxide" 
+
+[[mgr.prepend_keymap]]
+on = "Z"
+run = "plugin fzf"
+desc = "Jump to a file/directory via fzf"
+
+[[mgr.prepend_keymap]]
+on = "<C-q>"
+run = 'shell -- qlmanage -p "$@"'
+
+[[mgr.prepend_keymap]]
+on = ["c", "l"]
+run = 'shell -- osascript -e "on run args" -e "set the clipboard to POSIX file (first item of args)" -e "end run" -- "$@"'
+desc = "Copy file link (share in other app)" 
+
+[[mgr.prepend_keymap]]
+on = ["g", "n"]
+run = 'cd ~/nsi'
+desc = "Go to nsi folder" 
+
+[[mgr.prepend_keymap]]
+on = [ "g", "r" ]
+run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
+desc = "Go to root of git repo" 
+
+
