@@ -2,4 +2,6 @@ zed/.config/zed/prompts/*
 zed/.config/zed/conversations/*
 zed/.config/zed/themes/*
 
+karabiner/.config/karabiner/automatic_backups/*
+
 **/.DS_Store
