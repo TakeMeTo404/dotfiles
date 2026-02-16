@@ -25,6 +25,7 @@ config.font_size = 19
 config.automatically_reload_config = true
 config.window_close_confirmation = "NeverPrompt"
 config.adjust_window_size_when_changing_font_size = false
+config.send_composed_key_when_left_alt_is_pressed = true
 
 config.enable_tab_bar = false
 

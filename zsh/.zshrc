@@ -19,10 +19,13 @@ alias la="ls -A"
 alias ll="ls -l"
 alias lla="ll -A"
 alias g="git"
+alias lg="lazygit"
 alias sp="speedtest"
 alias glog="git log --pretty=oneline --all --decorate --graph"
+alias gbc="git branch --show-current | tr -d '\n' | pbcopy"
 alias y="yazi"
 
+export KUBECONFIG="$HOME/.kube/config-dev"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -53,3 +56,8 @@ function y() {
 #fi
 
 eval "$(zoxide init zsh)"
+
+export PATH="$PATH:/Users/a.rozhenkov/.local/bin"
+export PATH="$PATH:/Users/a.rozhenkov/.lmstudio/bin"
+# End of LM Studio CLI section
+
