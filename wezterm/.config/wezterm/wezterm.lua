@@ -1,15 +1,16 @@
 local wezterm = require("wezterm")
+local tabbar = require('tab-bar')
+
+local mux = wezterm.mux
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 config.set_environment_variables = {
-  WEZTERM_SHOW_HIDDEN_FILES = "1"
+    WEZTERM_SHOW_HIDDEN_FILES = "1"
 }
-
 config.font = wezterm.font("MesloLGS Nerd Font Mono")
 config.font_size = 19
-
 -- config.colors = {
 -- 	foreground = "#CBE0F0",
 -- 	background = "#011423",
@@ -27,18 +28,31 @@ config.window_close_confirmation = "NeverPrompt"
 config.adjust_window_size_when_changing_font_size = false
 config.send_composed_key_when_left_alt_is_pressed = true
 
-config.enable_tab_bar = false
-
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.6
 config.macos_window_background_blur = 10
 
+-- https://github.com/wezterm/wezterm/discussions/2506
+wezterm.on('gui-startup', function(window)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    local gui_window = window:gui_window();
+    gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
+end)
+config.native_macos_fullscreen_mode = true
+
 config.keys = {
-  {
-    key = 'n',
-    mods = 'SHIFT|CTRL',
-    action = wezterm.action.ToggleFullScreen,
-  },
+    {
+        key = 'n',
+        mods = 'SHIFT|CTRL',
+        action = wezterm.action.ToggleFullScreen,
+    },
 }
+
+tabbar.setup(wezterm)
+config.tab_bar_at_bottom = false
+config.use_fancy_tab_bar = false
+config.show_new_tab_button_in_tab_bar = false
+-- config.show_close_tab_button_in_tabs = false
+
 
 return config
