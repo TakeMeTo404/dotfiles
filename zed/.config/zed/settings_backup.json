@@ -1,62 +1,12 @@
 {
-    "diff_view_style": "unified",
-    "cli_default_open_behavior": "new_window",
-    "project_panel": {
-        "dock": "left",
-    },
-    "outline_panel": {
-        "dock": "left",
-    },
-    "collaboration_panel": {
-        "dock": "left",
-    },
-    "agent": {
-        "dock": "right",
-        "favorite_models": [],
-        "model_parameters": [],
-    },
-    "git_panel": {
-        "dock": "left",
-    },
-    "edit_predictions": {
-        "mode": "subtle",
-    },
-    "ssh_connections": [
-        {
-            "host": "10.8.175.183",
-            "username": "a.rozhenkov",
-            "args": [],
-            "projects": [
-                {
-                    "paths": ["/home/a.rozhenkov/j-webb-back"],
-                },
-            ],
-        },
-        {
-            "host": "git.dev.bi.zone",
-            "args": [],
-            "projects": [],
-        },
-        {
-            "host": "github.com",
-            "args": [],
-            "projects": [],
-        },
-        {
-            "host": "10.8.175.183",
-            "username": "a.rozhenkov",
-            "args": [],
-            "projects": [],
-        },
-    ],
     "vim_mode": true,
-    "relative_line_numbers": "enabled",
-    "theme": "Tomorrow Night Min",
+    "relative_line_numbers": true,
+    "theme": "Gruvbox Dark Soft",
     "ui_font_size": 16,
     "buffer_font_size": 16,
     "tab_size": 4,
     "git": {
-        "git_gutter": "tracked_files",
+        "git_gutter": "tracked_files"
     },
     "file_scan_exclusions": [
         "**/.git",
@@ -67,10 +17,10 @@
         "**/Thumbs.db",
         "**/.classpath",
         "**/.settings",
-        "**/.yarn",
+        "**/.yarn"
     ],
     "file_types": {
-        "CSS": ["scss"],
+        "CSS": ["scss"]
     },
     "format_on_save": "off",
     "languages": {
@@ -83,62 +33,47 @@
             "indent_size": 4,
             "indent_style": "space",
             "code_actions_on_format": {
-                "clangd": true,
+                "clangd": true
             },
             "always_treat_brackets_as_autoclosed": true,
             "ensure_final_newline_on_save": true,
-            "show_copilot_suggestions": true,
+            "show_copilot_suggestions": true
         },
         "TypeScript": {
             "formatter": {
                 "external": {
                     "command": "prettier",
-                    "arguments": ["--stdin-filepath", "{buffer_path}"],
-                },
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
             },
             "code_actions_on_format": {
-                "source.fixAll.eslint": true,
-            },
+                "source.fixAll.eslint": true
+            }
         },
         "TSX": {
             "formatter": {
                 "external": {
                     "command": "prettier",
-                    "arguments": ["--stdin-filepath", "{buffer_path}"],
-                },
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
             },
             "code_actions_on_format": {
-                "source.fixAll.eslint": true,
-            },
+                "source.fixAll.eslint": true
+            }
         },
         "JavaScript": {
             "formatter": {
                 "external": {
                     "command": "prettier",
-                    "arguments": ["--stdin-filepath", "{buffer_path}"],
-                },
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
             },
             "code_actions_on_format": {
-                "source.fixAll.eslint": true,
-            },
-        },
+                "source.fixAll.eslint": true
+            }
+        }
     },
     "lsp": {
-        "vtsls": {
-            "settings": {
-                "typescript": {
-                    "updateImportsOnFileMove": {
-                        "enabled": "always",
-                    },
-                },
-                "javascript": {
-                    "updateImportsOnFileMove": {
-                        "enabled": "always",
-                    },
-                },
-            },
-            "enable_lsp_tasks": true,
-        },
         "clangd": {
             "enabled": true,
             "version": "12.0.0",
@@ -152,27 +87,27 @@
             "initialization_options": {
                 "clangd": {
                     "completion": {
-                        "detailedLabel": true,
+                        "detailedLabel": true
                     },
                     "diagnostics": {
                         "onOpen": true,
-                        "onSave": true,
+                        "onSave": true
                     },
                     "highlight": {
-                        "lsRanges": true,
+                        "lsRanges": true
                     },
                     "hover": {
-                        "contentFormat": ["markdown", "plaintext"],
+                        "contentFormat": ["markdown", "plaintext"]
                     },
                     "semanticHighlighting": true,
                     "workspaceSymbol": {
-                        "sort": true,
+                        "sort": true
                     },
                     "codeLens": {
-                        "localVariables": true,
+                        "localVariables": true
                     },
                     "foldingRange": {
-                        "rangeLimit": 5000,
+                        "rangeLimit": 5000
                     },
                     "selectionRange": true,
                     "semanticTokens": {
@@ -200,7 +135,7 @@
                                 "string",
                                 "number",
                                 "regexp",
-                                "operator",
+                                "operator"
                             ],
                             "tokenModifiers": [
                                 "declaration",
@@ -212,10 +147,10 @@
                                 "async",
                                 "modification",
                                 "documentation",
-                                "defaultLibrary",
-                            ],
-                        },
-                    },
+                                "defaultLibrary"
+                            ]
+                        }
+                    }
                 },
                 "show_diagnostics": true,
                 "show_hover": true,
@@ -238,12 +173,12 @@
                 "show_semantic_tokens_decorations_hover": true,
                 "show_semantic_tokens_decorations_sticky": true,
                 "show_semantic_tokens_decorations_sticky_hover": true,
-                "show_semantic_tokens_decorations_sticky_stickiness": 1,
-            },
-        },
+                "show_semantic_tokens_decorations_sticky_stickiness": 1
+            }
+        }
     },
     "scrollbar": {
-        "git_diff": false,
+        "git_diff": false
         // "show": "never"
-    },
+    }
 }
