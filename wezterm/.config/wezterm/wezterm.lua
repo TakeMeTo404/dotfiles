@@ -1,10 +1,12 @@
 local wezterm = require("wezterm")
-local tabbar = require('tab-bar')
 
 local mux = wezterm.mux
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+
+_G.wezterm = wezterm
+_G.config = config
 
 config.set_environment_variables = {
     WEZTERM_SHOW_HIDDEN_FILES = "1"
@@ -42,17 +44,26 @@ config.native_macos_fullscreen_mode = true
 
 config.keys = {
     {
-        key = 'n',
+        key = 'f',
         mods = 'SHIFT|CTRL',
         action = wezterm.action.ToggleFullScreen,
     },
 }
 
-tabbar.setup(wezterm)
+config.window_padding = {
+    left = 100,
+    right = 100,
+    top = 50,
+    bottom = 50,
+}
+
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
 config.show_new_tab_button_in_tab_bar = false
 -- config.show_close_tab_button_in_tabs = false
 
+require('tab-bar')
+
+config.tab_max_width = 24
 
 return config
