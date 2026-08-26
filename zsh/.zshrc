@@ -24,6 +24,11 @@ alias sp="speedtest"
 alias glog="git log --pretty=oneline --all --decorate --graph"
 alias gbc="git branch --show-current | tr -d '\n' | pbcopy"
 alias y="yazi"
+alias d="docker"
+alias dc="docker compose"
+alias k="kubectl"
+
+alias opencode='NODE_TLS_REJECT_UNAUTHORIZED=0 opencode'
 
 export KUBECONFIG="$HOME/.kube/config-dev"
 export NVM_DIR="$HOME/.nvm"
@@ -57,7 +62,16 @@ function y() {
 
 eval "$(zoxide init zsh)"
 
+export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/Users/a.rozhenkov/.local/bin"
 export PATH="$PATH:/Users/a.rozhenkov/.lmstudio/bin"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # End of LM Studio CLI section
 
+# Start tmux if not already in a session and tmux is installed
+# if [[ -z "$TMUX" ]] && command -v tmux &> /dev/null; then
+#     tmux attach-session -t default || tmux new-session -s default
+# fi
+
+# opencode
+export PATH=/Users/a.rozhenkov/.opencode/bin:$PATH
